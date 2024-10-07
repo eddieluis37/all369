@@ -14,7 +14,7 @@
 
         <div class="col-12 text-center bg-light">
             <h1 class="color_azul_gob">
-                <b>Online</b>
+                <b>IPS All369</b>
             </h1>
             <h3 class="color_rojo_gob">{{ env('APP_SS', 'Servicio de Salud') }}</h3>
         </div>
@@ -58,7 +58,7 @@
             .logo_ionline .plus {
                 font-size: 0.7em;
                 font-family: 'Brush Script MT', cursive;
-                color: #ef4144;
+                color: #ef4199;
                 margin-top: -48px;
                 margin-left: 62px;
             }
@@ -66,7 +66,7 @@
     
         <div class="logo_ionline">
             {!! logoIonline() !!}
-            <span class="ionline">iOnline</span>
+            <span class="ionline">IpsAll369</span>
             <span class="plus">Plus</span>
         </div>
     </div>
@@ -214,7 +214,7 @@
                         </ol>
 
                         <p>
-                            En caso de consultas, no dude en llamarnos. Teléfono: +56 572409403 / Anexo: 579403
+                            En caso de consultas, no dude en llamarnos. Celular: 323 4769453
                         </p>
 
                         <hr class="my-4">

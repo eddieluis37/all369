@@ -24,13 +24,14 @@
         <style media="screen">
             .bg-nav-gobierno {
                 @switch(env('APP_ENV'))
-                    @case('local') background-color: rgb(73, 17, 82); @break
+                    @case('local') background-color: rgb(322, 0, 0); @break
                     @case('testing') background-color: rgb(2, 82, 0); @break
                     @case('production')
                         @if(env('APP_DEBUG') == true)
-                            background-color: rgb(255, 0, 0);
+                            background-color: rgb(0,108,183);                            
                         @else
-                            background-color: rgb(0,108,183);
+                            background-color: rgb(73, 17, 82);
+                            
                         @endif
                         @break;
                 @endswitch

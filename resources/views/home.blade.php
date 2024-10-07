@@ -115,7 +115,7 @@
                     </ol>
 
                     <p>
-                        En caso de consultas, no dude en llamarnos. Teléfono: +56 572409403 / Anexo: 579403
+                        En caso de consultas, no dude en llamarnos. Teléfono: +56 572 / Anexo: 9860
                     </p>
 
                     <hr class="my-4">
