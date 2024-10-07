@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Sitio web del Servicio de Salud Tarapacá">
-    <meta name="author" content="Servicio de Salud Tarapacá">
+    <meta name="description" content="app salud ips">
+    <meta name="author" content="Servi salud">
     <title>{{ config('app.name') }}</title>
 
     <!-- Styles -->
@@ -61,9 +61,9 @@
 
 <body>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm container bg-nav-gobierno">
-        <h5 class="my-0 mr-md-auto font-weight-normal"> <img src="{{ asset('images/gob-header.svg') }}" alt="Logo del gobierno de chile"> </h5>
+        <h5 class="my-0 mr-md-auto font-weight-normal"> <img src="{{ asset('images/gob-header.svg') }}" alt="Logo"> </h5>
         <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="http://www.saludtarapaca.gob.cl"></a>
+            <a class="p-2 text-dark" href="http://www.all369.com"></a>
         </nav>
 
     </div>
@@ -78,7 +78,7 @@
                 </tr>
             </table>
         </div>
-        <p class="text-muted mt-4">Bienvenido a la intranet del Servicio de Salud de Tarapacá.</p>
+        <p class="text-muted mt-4">Bienvenido a la app web de Salud </p>
         @include('layouts.bt5.partials.errors')
         @include('layouts.bt4.partials.flash_message')
 
@@ -193,7 +193,7 @@
 
                         <ul class="list-unstyled mt-3 mb-4 text-center">
                             <p>
-                                Si perteneces a la región de Tarapacá, puedes revisar
+                                Si perteneces a la región caribe, puedes revisar
                                 el resultado de tu exámen de Covid-19 utilizando tu
                                 clave única del estado, haciendo click en el botón
                                 de abajo.

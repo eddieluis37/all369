@@ -127,7 +127,7 @@
             <div class="mt-4 p-5 text-black rounded bg-light">
                 <div class="row">
 
-                    <div class="col-md-3 col-12">
+                   <!--  <div class="col-md-3 col-12">
                         <img src="{{ asset('images/Logo Servicio de Salud Tarapacá - RGB.png') }}"
                             alt="Logo {{ env('APP_SS') }}"
                             class="img-thumbnail mb-3">
@@ -152,13 +152,12 @@
                                 <a href="{{ asset('images/Logo Hospital de Alto Hospicio - Pluma.png') }}">HAH Pluma</a>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
 
 
                     <div class="col">
-                        <h6>Pasos para solicitud de Firma Electrónica del Gobierno (OTP) para Funcionarios Visadores y
-                            Firmantes</h6>
-                        <ol>
+                        <h6>Pasos para solicitud de Firma Electrónica del Gobierno</h6>
+                       <!--  <ol>
                             <li>
                                 Solicitar mediante SGR o correo electrónico, la creación del usuario en firma.digital.gob.cl. Indicando los siguientes datos:
                             </li>
@@ -211,7 +210,7 @@
                                 -
                                 <a href="https://apps.apple.com/cl/app/google-authenticator/id388497605">iPhone</a>
                             </li>
-                        </ol>
+                        </ol> -->
 
                         <p>
                             En caso de consultas, no dude en llamarnos. Celular: 323 4769453
