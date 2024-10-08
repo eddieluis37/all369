@@ -21,8 +21,8 @@ class UserSeeder extends Seeder
         $user->id = 12345678;
         $user->dv = 9;
         $user->name = "Administrador";
-        $user->fathers_family = "Paterno";
-        $user->mothers_family = "Materno";
+        $user->fathers_family = "Primero";
+        $user->mothers_family = "Segundo";
         $user->password = bcrypt('admin');
         $user->position = "Administrator";
         $user->email = "sistemas.sst@redsalud.gob.cl";
