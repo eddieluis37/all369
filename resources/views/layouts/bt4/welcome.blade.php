@@ -245,7 +245,7 @@
         <footer class="pt-4 my-md-5 pt-md-5 border-top">
             <div class="row">
                 <div class="col-3 col-md-3">
-                    <img class="mb-2" src="{{ asset('images/logo_sst_100px.png') }}" alt="Logo Servicio de Salud Tarapacá">
+                    <img class="mb-2" src="{{ asset('images/logo_ips_100px.png') }}" alt="Logo Servicio de Salud">
                 </div>
                 <div class="col-1 col-md-6">
 
@@ -253,9 +253,9 @@
                 <div class="col-7 col-md-3">
                     <h5>Desarrollado por</h5>
                     <ul class="list-unstyled text-small">
-                        <li>Departamento TIC del SST</li>
-                        <li><a class="text-muted" href="mailto:sistemas.sst@redsalud.gobc.">sistemas.sst@redsalud.gob.cl</a></li>
-                        <small class="d-block mb-3 text-muted">2021</small>
+                        <li>Departamento TIC Grel</li>
+                        <li><a class="text-muted" href="mailto:sistemas.sst@redsalud.gobc.">admin@all369.com</a></li>
+                        <small class="d-block mb-3 text-muted">2024</small>
                     </ul>
                 </div>
             </div>
