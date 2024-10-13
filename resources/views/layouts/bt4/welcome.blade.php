@@ -70,7 +70,7 @@
                 </tr>
             </table>
         </div>
-        <p class="text-muted mt-4">Bienvenido a la intranet del {{ env('APP_SS') }}.</p>
+        <p class="text-muted mt-4">Bienvenido a la app del {{ env('APP_SS') }}.</p>
         @include('layouts.bt4.partials.errors')
         @include('layouts.bt4.partials.flash_message')
 
@@ -86,20 +86,20 @@
                 <div class="card-body">
 
                     @if(!env('OLD_SERVER'))
-                    <h6 class="mb-3 text-center">Utilizando tu Clave Única</h6>
+                 <!--    <h6 class="mb-3 text-center">Utilizando tu Clave Única</h6> -->
 
                     <!-- Código para visualizar botón oficial iniciar sesión con ClaveÚnica-->
-                    <a class="btn-cu  btn-m btn-color-estandar m-auto"
+                  <!--   <a class="btn-cu  btn-m btn-color-estandar m-auto"
                         href="{{ route('claveunica.autenticar') }}"
                         title="Este es el botón Iniciar sesión de ClaveÚnica">
                         <span class="cl-claveunica"></span>
                         <span class="texto">Iniciar sesión</span>
-                    </a>
+                    </a> -->
                     @endif
                     <!--./ fin botón-->
 
                 
-                <hr>
+               <!--  <hr> -->
                 
                 <h6 class="mb-3 text-center">Con tu cuenta del sistema</h6>
 
