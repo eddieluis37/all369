@@ -102,7 +102,7 @@ class WebserviceController extends Controller
             // Verificar si el JSON tiene el formato correcto
             if (!is_string($modelRoute) || !is_array($modelData) || !is_array($columnMapping) || !is_array($primaryKeys)) {
 
-                Notification::route('mail', 'sistemas.sst@redsalud.gob.cl')
+                Notification::route('mail', 'laravel999@gmail.com')
                     ->notify(new PendingJsonToInsertNotification("El JSON no tiene el formato correcto: " . $modelRoute ));
 
                 return response()->json(['error' => 'El JSON no tiene el formato correcto'], 400);
@@ -111,7 +111,7 @@ class WebserviceController extends Controller
             // Verificar si el modelo especificado existe
             if (!class_exists($modelRoute)) {
 
-                Notification::route('mail', 'sistemas.sst@redsalud.gob.cl')
+                Notification::route('mail', 'laravel999@gmail.com')
                     ->notify(new PendingJsonToInsertNotification("El modelo especificado no existe: " . $modelRoute ));
 
                 return response()->json(['error' => 'El modelo especificado no existe'], 400);
@@ -124,7 +124,7 @@ class WebserviceController extends Controller
             $invalidColumns = array_diff($mappedColumns, $modelColumns);
             if (count($invalidColumns) > 0) {
 
-                Notification::route('mail', 'sistemas.sst@redsalud.gob.cl')
+                Notification::route('mail', 'laravel999@gmail.com')
                     ->notify(new PendingJsonToInsertNotification("El mapeo de columnas contiene nombres de columna no validos para el modelo especificado: " . $modelRoute, $invalidColumns));
 
                 return response()->json(['error' => 'El mapeo de columnas contiene nombres de columna no validos para el modelo especificado', 'invalid_columns' => $invalidColumns], 400);
@@ -140,7 +140,7 @@ class WebserviceController extends Controller
 
                 // if ($existingRecord) {
 
-                //     Notification::route('mail', 'sistemas.sst@redsalud.gob.cl')
+                //     Notification::route('mail', 'laravel999@gmail.com')
                 //         ->notify(new PendingJsonToInsertNotification("No se han creado registros, ya existen los que se intentan registrar: " . $modelRoute ));
 
                 //     // Mostrar un mensaje indicando que ya existe un registro igual
@@ -158,7 +158,7 @@ class WebserviceController extends Controller
 
             } catch (\Exception $e) {
 
-                Notification::route('mail', 'sistemas.sst@redsalud.gob.cl')
+                Notification::route('mail', 'laravel999@gmail.com')
                     ->notify(new PendingJsonToInsertNotification("Error al crear o actualizar registros: " . $modelRoute . ": " . $e->getMessage()));
 
                 return response()->json(['error' => 'Error al crear o actualizar registros: ' . $e->getMessage()], 500);
@@ -171,7 +171,7 @@ class WebserviceController extends Controller
             $output = Artisan::output();
 
             // Enviar la notificación
-            Notification::route('mail', 'sistemas.sst@redsalud.gob.cl')->notify(new PendingJsonToInsertNotification("Registros creados con exito", $output));
+            Notification::route('mail', 'laravel999@gmail.com')->notify(new PendingJsonToInsertNotification("Registros creados con exito", $output));
 
             // Si la ejecución fue exitosa, eliminar los registros anteriores del mismo modelo
             PendingJsonToInsert::where('model_route', $modelRoute)

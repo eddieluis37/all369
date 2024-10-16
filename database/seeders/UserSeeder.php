@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
         $user->mothers_family = "Casas";
         $user->password = bcrypt('admin');
         $user->position = "Administrator";
-        $user->email = "sistemas.sst@redsalud.gob.cl";
+        $user->email = "laravel999@gmail.com";
         $user->organizationalUnit()->associate($ou);
         $user->save();
         $user->assignRole('god');
@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
         $user2->mothers_family = "Johnson";
         $user2->password = bcrypt('password1');
         $user2->position = "User";
-        $user2->email = "sistemas.sst@redsalud.gob.cl";
+        $user2->email = "laravel999@gmail.com";
         $user2->organizationalUnit()->associate($ou);
         $user2->save();
         $user2->assignRole('user');

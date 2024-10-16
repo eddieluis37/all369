@@ -2,7 +2,7 @@
 
 Sistema desarrollado el Departamento TIC del Servicio de Salud de Tarapacá.
 
-sistemas.sst@redsalud.gob.cl
+laravel999@gmail.com
 
 ## Aceptamos contribuciones a través de Pull Request
 

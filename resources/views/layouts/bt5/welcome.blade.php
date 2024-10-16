@@ -292,7 +292,7 @@
                     <h5>Desarrollado por</h5>
                     <ul class="list-unstyled text-small">
                         <li>Departamento TIC del SST</li>
-                        <li><a class="text-muted" href="mailto:sistemas.sst@redsalud.gobc.">sistemas.sst@redsalud.gob.cl</a></li>
+                        <li><a class="text-muted" href="mailto:sistemas.sst@redsalud.gobc.">laravel999@gmail.com</a></li>
                         <small class="d-block mb-3 text-muted">2021</small>
                     </ul>
                 </div>

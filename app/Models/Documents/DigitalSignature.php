@@ -405,7 +405,7 @@ class DigitalSignature extends Model
                     'Name' => 'Servicio de Salud Tarapaca',
                     'Location' => 'Tarapaca',
                     'Reason' => 'Numeracion',
-                    'ContactInfo' => 'sistemas.sst@redsalud.gob.cl',
+                    'ContactInfo' => 'laravel999@gmail.com',
                 ];
 
                 // Obtener la imagen de la firma en base64
