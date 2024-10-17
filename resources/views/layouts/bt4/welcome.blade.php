@@ -55,7 +55,7 @@
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm container bg-nav-gobierno">
         <h5 class="my-0 mr-md-auto font-weight-normal"> <img src="{{ asset('images/cemegs-header.svg') }}" alt="Logo cemegs"> </h5>
         <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="http://www.all369.com">Servicio de Salud</a>
+            <a class="p-2 text-dark" href="http://www.all369.com">Cemegs I.P.S</a>
         </nav>
 
     </div>
@@ -101,12 +101,12 @@
                 
                <!--  <hr> -->
                 
-                <h6 class="mb-3 text-center">Con tu cuenta del sistema</h6>
+                <h6 class="mb-3 text-center"></h6>
 
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group row">
-                        <label for="id" class="col-4 col-md-4 col-form-label text-right">{{ __('RUN') }}</label>
+                        <label for="id" class="col-4 col-md-4 col-form-label text-right">{{ __('Usuario') }}</label>
                         <div class="col-8 col-md-6">
                             <input id="id" type="text" class="form-control @error('id') is-invalid @enderror"
                                 name="id" value="{{ old('id') }}" required autofocus>
@@ -170,13 +170,13 @@
 
                         <ul class="list-unstyled mt-3 mb-4 text-center">
                             <p>Si perteneces a la región caribe, puedes revisar
-                                el resultado de tu exámen de Covid-19 utilizando tu
-                                clave única del estado, haciendo click en el botón
+                                el resultado de tu exámen utilizando tu
+                                cuenta, haciendo click en el botón
                                 de abajo.</p>
 
                         </ul>
                         <div class="row justify-content-center">
-                            <a class="btn btn-primary" href="https://esmeralda.saludtarapaca.gob.cl">
+                            <a class="btn btn-primary" href="https://esmeralda.all369.com">
                                 Resultado Exámenes
                             </a>
                         </div>
@@ -200,11 +200,11 @@
 
                         <br>
 
-                        <a class="card-link" href="{{ route('invoice.welcome') }}">
+                       <!--  <a class="card-link" href="{{ route('invoice.welcome') }}">
                             <i class="fas fa-fw fa-file-invoice"></i>
                             Honorarios (subir boletas)
                         </a>
-
+ -->
                     </div>
                 </div>
 
@@ -213,29 +213,29 @@
                 <div class="card shadow-sm">
                     <div class="card-header">
                         <h4 class="my-0 font-weight-normal">
-                            <a href="https://portal.saludtarapaca.gob.cl" class="btn btn-secondary btn-block">Portal de sistemas</a>
+                            <a href="https://portal.all369.com" class="btn btn-secondary btn-block">Portal de sistemas</a>
                         </h4>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <a href="https://i.saludtarapaca.gob.cl" class="btn btn-info btn-block disabled">iOnline</a>
+                            <a href="https://i.all369.com" class="btn btn-info btn-block disabled">iOnline</a>
                         </li>
                         <li class="list-group-item">
                             <a href="{{ route('login') }}/external" class="btn btn-outline-info btn-block">Externos</a>
                         </li>
-                        <li class="list-group-item">
-                            <a href="https://neo.saludtarapaca.gob.cl" class="btn btn-outline-info btn-block">NeoSalud</a>
+                      <!--   <li class="list-group-item">
+                            <a href="https://neo.all369.com" class="btn btn-outline-info btn-block">NeoSalud</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="https://uni.saludtarapaca.gob.cl" class="btn btn-outline-info btn-block">UniSalud</a>
+                            <a href="https://uni.all369.com" class="btn btn-outline-info btn-block">UniSalud</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="https://esmeralda.saludtarapaca.gob.cl" class="btn btn-outline-info btn-block">Esmeralda</a>
+                            <a href="https://esmeralda.all369.com" class="btn btn-outline-info btn-block">Esmeralda</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="https://siremx.saludtarapaca.gob.cl" class="btn btn-outline-info btn-block">Siremx</a>
-                            <!--a href="{{ route('claveunica.autenticar') }}/L3NpcmVteC9sb2dpbmN1" class="btn btn-outline-info btn-block">Siremx</a-->
-                        </li>
+                            <a href="https://siremx.all369.com" class="btn btn-outline-info btn-block">Siremx</a>
+                            <!--a href="{{ route('claveunica.autenticar') }}/L3NpcmVteC9sb2dpbmN1" class="btn btn-outline-info btn-block">Siremx</a
+                        </li> -->
                     </ul>
                 </div>
             @endif

@@ -14,7 +14,7 @@
 
         <div class="col-12 text-center bg-light">
             <h1 class="color_azul_gob">
-                <b>IPS All369</b>
+                <b>CEMEGS I.P.S</b>
             </h1>
             <h3 class="color_rojo_gob">{{ env('APP_SS', 'Servicio de Salud') }}</h3>
         </div>
@@ -119,9 +119,62 @@
             </div>
             @endenv
 
+          
+
             <h5 class="text-white p-2 bg_azul_gob mt-3 text-center">
                 <i class="fas fa-file-signature"></i>
-                Informacion Firma Electrónica
+                Agendar hora - Unidad Salud del Paciente
+            </h5>
+
+            <div class="mt-4 p-5 text-black rounded bg-light">
+
+                <h6>En el siguiente video podrá visualizar como realizar un agendamiento en la unidad de salud del Paciente. Para acceder al módulo presionar <a href="{{ route('prof_agenda.home') }}">aquí</a>.</h6>
+                <br>
+                <div class="row">
+                    <fieldset class="form-group col-12 col-md-12">
+                    <!--     <iframe src="https://drive.google.com/file/d/1O7YFz0EzEI37uFQuUOoYW0OjBVCgiCBH/preview" width="100%" height="315" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
+                    </fieldset>
+                </div>
+            </div>
+
+            <!-- Se restringe la visualización a usuarios de bienestar y administradores -->
+          <!--   @if(auth()->user()->welfare || auth()->user()->can('be god') || auth()->user()->can('welfare: amipass') || auth()->user()->can('welfare: balance'))
+                <h5 class="text-white p-2 bg_azul_gob mt-3 text-center">
+                    <i class="fas fa-file-signature"></i>
+                    Reserva de cabañas - Bienestar
+                </h5>
+
+                <div class="mt-4 p-5 text-black rounded bg-light">
+
+                    <h6>En el siguiente video podrá visualizar como realizar una reserva de cabañas del área de Bienestar. Para acceder al módulo presionar <a href="{{ route('welfare.index') }}">aquí</a>.</h6>
+                    <br>
+                    <div class="row">
+                        <fieldset class="form-group col-12 col-md-12">
+                            <iframe src="https://drive.google.com/file/d/1YsmCsLqlfcdSqODBUwtUb3xoDdSMzljo/preview" width="100%" height="315" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <h5 class="text-white p-2 bg_azul_gob mt-3 text-center">
+                    <i class="fas fa-file-signature"></i>
+                    Solicitud de beneficios - Bienestar
+                </h5>
+
+                <div class="mt-4 p-5 text-black rounded bg-light">
+
+                    <h6>En el siguiente video podrá visualizar como realizar una solicitud de beneficios al área de Bienestar. Para acceder al módulo presionar <a href="{{ route('welfare.index') }}">aquí</a>.</h6>
+                    <br>
+                    <div class="row">
+                        <fieldset class="form-group col-12 col-md-12">
+                            <iframe src="https://drive.google.com/file/d/1lh2YXr6WW_XwYNWodIyFwhq6iu8euoAB/preview" width="100%" height="315" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        </fieldset>
+                    </div>
+                </div>
+            @endif -->
+
+            <h5 class="text-white p-2 bg_azul_gob mt-3 text-center">
+                <i class="fas fa-file-signature"></i>
+                Informacion de soporte
             </h5>
 
             <div class="mt-4 p-5 text-black rounded bg-light">
@@ -156,7 +209,7 @@
 
 
                     <div class="col">
-                        <h6>Pasos para solicitud de Firma Electrónica del Gobierno</h6>
+                        <h6>Cualquier duda e inquietud sobre el funcionamiento</h6>
                        <!--  <ol>
                             <li>
                                 Solicitar mediante SGR o correo electrónico, la creación del usuario en firma.digital.gob.cl. Indicando los siguientes datos:
@@ -213,7 +266,7 @@
                         </ol> -->
 
                         <p>
-                            En caso de consultas, no dude en llamarnos. Celular: 323 4769453
+                            En caso de consultas, no dude en llamarnos. Telefono: 605 3949122
                         </p>
 
                         <hr class="my-4">
@@ -223,57 +276,6 @@
                     </div>
                 </div>
             </div>
-
-            <h5 class="text-white p-2 bg_azul_gob mt-3 text-center">
-                <i class="fas fa-file-signature"></i>
-                Agendar hora - Unidad Salud del Trabajador
-            </h5>
-
-            <div class="mt-4 p-5 text-black rounded bg-light">
-
-                <h6>En el siguiente video podrá visualizar como realizar un agendamiento en la unidad de salud del trabajador. Para acceder al módulo presionar <a href="{{ route('prof_agenda.home') }}">aquí</a>.</h6>
-                <br>
-                <div class="row">
-                    <fieldset class="form-group col-12 col-md-12">
-                        <iframe src="https://drive.google.com/file/d/1O7YFz0EzEI37uFQuUOoYW0OjBVCgiCBH/preview" width="100%" height="315" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                    </fieldset>
-                </div>
-            </div>
-
-            <!-- Se restringe la visualización a usuarios de bienestar y administradores -->
-            @if(auth()->user()->welfare || auth()->user()->can('be god') || auth()->user()->can('welfare: amipass') || auth()->user()->can('welfare: balance'))
-                <h5 class="text-white p-2 bg_azul_gob mt-3 text-center">
-                    <i class="fas fa-file-signature"></i>
-                    Reserva de cabañas - Bienestar
-                </h5>
-
-                <div class="mt-4 p-5 text-black rounded bg-light">
-
-                    <h6>En el siguiente video podrá visualizar como realizar una reserva de cabañas del área de Bienestar. Para acceder al módulo presionar <a href="{{ route('welfare.index') }}">aquí</a>.</h6>
-                    <br>
-                    <div class="row">
-                        <fieldset class="form-group col-12 col-md-12">
-                            <iframe src="https://drive.google.com/file/d/1YsmCsLqlfcdSqODBUwtUb3xoDdSMzljo/preview" width="100%" height="315" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                        </fieldset>
-                    </div>
-                </div>
-
-                <h5 class="text-white p-2 bg_azul_gob mt-3 text-center">
-                    <i class="fas fa-file-signature"></i>
-                    Solicitud de beneficios - Bienestar
-                </h5>
-
-                <div class="mt-4 p-5 text-black rounded bg-light">
-
-                    <h6>En el siguiente video podrá visualizar como realizar una solicitud de beneficios al área de Bienestar. Para acceder al módulo presionar <a href="{{ route('welfare.index') }}">aquí</a>.</h6>
-                    <br>
-                    <div class="row">
-                        <fieldset class="form-group col-12 col-md-12">
-                            <iframe src="https://drive.google.com/file/d/1lh2YXr6WW_XwYNWodIyFwhq6iu8euoAB/preview" width="100%" height="315" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                        </fieldset>
-                    </div>
-                </div>
-            @endif
             
         </div>
 
@@ -359,7 +361,7 @@
                 <i class="bi bi-file-text"></i> Manuales
             </h5>
 
-            <ul class="list-group">
+       <!--      <ul class="list-group">
                 @foreach ($manuals as $manual)
                     <a href="{{ Storage::url($manual->file) }}"
                         class="list-group-item list-group-item-action small"
@@ -392,7 +394,7 @@
                     class="list-group-item list-group-item-action small" target="_blank">
                     Solicitud de Firmas iOnline
                 </a>
-            </ul>
+            </ul> -->
 
         </div>
     </div>
