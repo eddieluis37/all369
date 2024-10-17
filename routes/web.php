@@ -258,6 +258,9 @@ use App\Http\Controllers\Programmings\ProgrammingController;
 use App\Http\Controllers\ReplacementStaff\ProfileController;
 use App\Http\Controllers\RequestForms\RequestFormController;
 use App\Http\Controllers\Requirements\RequirementController;
+
+use App\Http\Controllers\OrderForms\OrderFormController;
+
 use App\Livewire\Rrhh\PerformanceReport\ReceivedReport;
 use App\Livewire\Welfare\Amipass\NewBeneficiaryRequest;
 use App\Http\Controllers\Agreements\AccountabilityController;
@@ -2360,6 +2363,8 @@ Route::prefix('request_forms')->as('request_forms.')->middleware(['auth', 'must.
     Route::get('/info/circular_3650_2024', function () {
         return Storage::response('ionline/request_forms/info/circular_3650_2024.pdf');
     })->name('circular_3650_2024');
+
+    Route::get('/my_orders', [OrderFormController::class, 'my_orders'])->name('my_orders');
 
     Route::get('/my_forms', [RequestFormController::class, 'my_forms'])->name('my_forms');
     Route::get('/own_index', [RequestFormController::class, 'own_index'])->name('own_index');
