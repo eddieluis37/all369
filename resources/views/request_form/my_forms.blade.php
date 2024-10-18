@@ -14,7 +14,7 @@
         <div class="col-sm-8 text-justify">
             <br />
             Todos los formularios de requerimientos para nuevos procesos de compra deberán emitirse a más 
-            tardar el <b>30 de septiembre de 2024</b>. Es importante destacar que los formularios de requerimientos 
+            tardar el <b>30 de diciembre de 2024</b>. Es importante destacar que los formularios de requerimientos 
             de suministro mensual no están sujetos a esta fecha límite, de igual que los formularios de requerimientos 
             de presupuestos de programas o proyectos asignados posterior al 30-09-2024.
         </div>

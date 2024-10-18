@@ -2362,9 +2362,7 @@ Route::prefix('request_forms'])->name('request_forms.')->group(function () {
 Route::prefix('request_forms')->as('request_forms.')->middleware(['auth', 'must.change.password'])->group(function () {
     Route::get('/info/circular_3650_2024', function () {
         return Storage::response('ionline/request_forms/info/circular_3650_2024.pdf');
-    })->name('circular_3650_2024');
-
-    Route::get('/my_orders', [OrderFormController::class, 'my_orders'])->name('my_orders');
+    })->name('circular_3650_2024');  
 
     Route::get('/my_forms', [RequestFormController::class, 'my_forms'])->name('my_forms');
     Route::get('/own_index', [RequestFormController::class, 'own_index'])->name('own_index');
@@ -2476,6 +2474,124 @@ Route::prefix('request_forms')->as('request_forms.')->middleware(['auth', 'must.
 });
 
 /** Fin rutas Request Form */
+
+Route::prefix('orders_forms')->as('orders_forms.')->middleware(['auth', 'must.change.password'])->group(function () {
+    Route::get('/info/circular_3650_2024', function () {
+        return Storage::response('ionline/orders_forms/info/circular_3650_2024.pdf');
+    })->name('circular_3650_2024');
+
+    Route::get('/my_forms', [OrderFormController::class, 'my_forms'])->name('my_forms');
+
+    
+    Route::get('/own_index', [RequestFormController::class, 'own_index'])->name('own_index');
+    Route::get('/all_forms', [RequestFormController::class, 'all_forms'])->name('all_forms');
+    Route::get('/pending_forms', [RequestFormController::class, 'pending_forms'])->name('pending_forms');
+    Route::get('/contract_manager_forms', [RequestFormController::class, 'contract_manager_forms'])->name('contract_manager_forms');
+    Route::get('/contract_manager_index', [RequestFormController::class, 'contract_manager_index'])->name('contract_manager_index');
+    Route::get('/create', [RequestFormController::class, 'create'])->name('create');
+    Route::post('/{requestForm}/create_provision', [RequestFormController::class, 'create_provision'])->name('create_provision');
+    Route::get('/{requestForm}/sign/{eventType}', [RequestFormController::class, 'sign'])->name('sign');
+    Route::get('/callback-sign-request-form/{message}/{modelId}/{signaturesFile?}', [RequestFormController::class, 'callbackSign'])->name('callbackSign');
+    Route::get('/callback-sign-new-budget/{message}/{modelId}/{signaturesFile?}', [RequestFormController::class, 'callbackSignNewBudget'])->name('callbackSignNewBudget');
+    Route::get('/signed-request-form-pdf/{requestForm}/{original}', [RequestFormController::class, 'signedRequestFormPDF'])->name('signedRequestFormPDF');
+    Route::get('/signed-old-request-form-pdf/{oldSignatureFile}', [RequestFormController::class, 'signedOldRequestFormPDF'])->name('signedOldRequestFormPDF');
+    Route::get('/request_form_comments', [RequestFormController::class, 'request_form_comments'])->name('request_form_comments');
+    Route::get('/export', [RequestFormController::class, 'export'])->name('export');
+    Route::get('/{requestForm}/copy', [RequestFormController::class, 'copy'])->name('copy');
+    Route::get('/{requestForm}/rollback', [RequestFormController::class, 'rollback'])->name('rollback');
+
+    Route::prefix('message')->as('message.')->middleware('auth')->group(function () {
+        Route::post('/{requestForm}/store/{eventType}/{from}', [RequestFormMessageController::class, 'store'])->name('store');
+        Route::get('/show_file/{requestFormMessage}', [RequestFormMessageController::class, 'show_file'])->name('show_file');
+    });
+
+    Route::prefix('items')->as('items.')->middleware('auth')->group(function () {
+        Route::get('/create/{purchasePlan?}', [RequestFormController::class, 'create'])->name('create');
+        Route::get('/edit/{itemRequestForm}', [ItemRequestFormController::class, 'edit'])->name('edit');
+        Route::post('/update/{itemRequestForm}', [ItemRequestFormController::class, 'update'])->name('update');
+    });
+
+    Route::prefix('passengers')->as('passengers.')->middleware('auth')->group(function () {
+        Route::get('/create', [RequestFormController::class, 'create'])->name('create');
+    });
+
+    Route::prefix('supply')->as('supply.')->middleware('auth')->group(function () {
+        Route::get('/', [PurchasingProcessController::class, 'index'])->name('index');
+        Route::get('/{requestForm}', [PurchasingProcessController::class, 'show'])->name('show');
+        Route::get('/{requestForm}/purchase', [PurchasingProcessController::class, 'purchase'])->name('purchase');
+        Route::get('/{requestForm}/purchase/{purchasingProcessDetail}/edit', [PurchasingProcessController::class, 'edit'])->name('edit');
+        Route::post('/{requestForm}/create_internal_oc', [PurchasingProcessController::class, 'create_internal_oc'])->name('create_internal_oc');
+        Route::post('/{requestForm}/create_petty_cash', [PurchasingProcessController::class, 'create_petty_cash'])->name('create_petty_cash');
+        Route::post('/{requestForm}/create_fund_to_be_settled', [PurchasingProcessController::class, 'create_fund_to_be_settled'])->name('create_fund_to_be_settled');
+        Route::post('/{requestForm}/create_tender', [PurchasingProcessController::class, 'create_tender'])->name('create_tender');
+        Route::post('/{requestForm}/create_oc', [PurchasingProcessController::class, 'create_oc'])->name('create_oc');
+        Route::post('/{requestForm}/create_convenio_marco', [PurchasingProcessController::class, 'create_convenio_marco'])->name('create_convenio_marco');
+        Route::post('/{requestForm}/create_direct_deal', [PurchasingProcessController::class, 'create_direct_deal'])->name('create_direct_deal');
+        Route::put('/{requestForm}/{directDeal}/update_direct_deal', [PurchasingProcessController::class, 'update_direct_deal'])->name('update_direct_deal');
+        Route::post('{requestForm}/create_new_budget', [RequestFormController::class, 'create_new_budget'])->name('create_new_budget');
+        Route::post('{requestForm}/close_purchasing_process', [PurchasingProcessController::class, 'close_purchasing_process'])->name('close_purchasing_process');
+        Route::post('{requestForm}/reasign_purchaser', [PurchasingProcessController::class, 'reasign_purchaser'])->name('reasign_purchaser');
+        Route::post('{requestForm}/edit_observation', [PurchasingProcessController::class, 'edit_observation'])->name('edit_observation');
+        Route::get('/petty_cash/{pettyCash}/download', [PettyCashController::class, 'download'])->name('petty_cash.download');
+        Route::get('/fund_to_be_settled/{fundToBeSettled}/download', [FundToBeSettledController::class, 'download'])->name('fund_to_be_settled.download');
+        Route::get('/attached_file/{attachedFile}/download', [AttachedFilesController::class, 'download'])->name('attached_file.download');
+        Route::post('/{requestForm}/create_tender', [PurchasingProcessController::class, 'create_tender'])->name('create_tender');
+        Route::delete('/{detail}/release_item', [PurchasingProcessController::class, 'release_item'])->name('release_item');
+        Route::delete('/{detail}/release_all_items', [PurchasingProcessController::class, 'release_all_items'])->name('release_all_items');
+        Route::get('/mercado-publico-api/{type}/{code}', function ($type, $code) {
+            return MercadoPublico::getTender($code, $type);
+        });
+    });
+
+    Route::prefix('reports')->as('reports.')->middleware('auth')->group(function () {
+        Route::get('/show_form_items/{type}', [RequestFormController::class, 'show_form_items'])->name('show_form_items');
+        Route::get('/show_form_items_export', [RequestFormController::class, 'show_form_items_export'])->name('show_form_items_export');
+        Route::get('/show_amounts_by_program', [RequestFormController::class, 'show_amounts_by_program'])->name('show_amounts_by_program');
+        Route::get('/show_globals_amounts', ReportGlobalBudget::class)->name('show_globals_amounts');
+    });
+
+    /* DOCUMENTS */
+    Route::get('/create_form_document/{requestForm}/{has_increased_expense}', [RequestFormController::class, 'create_form_document'])->name('create_form_document');
+    Route::get('/create_view_document/{requestForm}/{has_increased_expense}', [RequestFormController::class, 'create_view_document'])->name('create_view_document');
+    Route::post('/upload_form_document/{requestForm}', [RequestFormController::class, 'upload_form_document'])->name('upload_form_document');
+    Route::get('/create_internal_purchase_order_document/{purchasingProcessDetail}', [InternalPurchaseOrderController::class, 'create_internal_purchase_order_document'])->name('create_internal_purchase_order_document');
+
+    Route::get('/{requestForm}/edit', [RequestFormController::class, 'edit'])->name('edit');
+
+    Route::get('/leadership_index', [RequestFormController::class, 'leadershipIndex'])->name('leadership_index');
+    Route::get('/{requestForm}/leadership_sign', [RequestFormController::class, 'leadershipSign'])->name('leadership_sign');
+
+    Route::get('/download/{requestFormFile}', [RequestFormFileController::class, 'download'])->name('download');
+    Route::get('/show_file/{requestFormFile}', [RequestFormFileController::class, 'show_file'])->name('show_file');
+
+    Route::get('/show_item_file/{itemRequestForm}', [ItemRequestFormController::class, 'show_item_file'])->name('show_item_file');
+
+
+
+    Route::get('/finance_index', [RequestFormController::class, 'financeIndex'])->name('finance_index');
+    Route::get('/{requestForm}/finance_sign', [RequestFormController::class, 'financeSign'])->name('finance_sign');
+
+    Route::get('/prefinance_index', [RequestFormController::class, 'prefinanceIndex'])->name('prefinance_index');
+    Route::get('/{requestForm}/prefinance_sign', [RequestFormController::class, 'prefinanceSign'])->name('prefinance_sign');
+
+    Route::get('/supply_index', [RequestFormController::class, 'supplyIndex'])->name('supply_index');
+    Route::get('/{requestForm}/supply_sign', [RequestFormController::class, 'supplySign'])->name('supply_sign');
+
+    Route::get('/supervisor_user_index', [RequestFormController::class, 'supervisorUserIndex'])->name('supervisor_user_index');
+    Route::get('/{requestForm}/purchasing_process', [RequestFormController::class, 'purchasingProcess'])->name('purchasing_process');
+
+    Route::get('/{requestForm}/destroy', [RequestFormController::class, 'destroy'])->name('destroy');
+    Route::get('/{requestForm}/show', [RequestFormController::class, 'show'])->name('show');
+
+    Route::post('/store', [RequestFormController::class, 'store'])->name('store');
+    Route::put('/update', [RequestFormController::class, 'update'])->name('update');
+    Route::get('/my_request_inbox', [RequestFormController::class, 'myRequestInbox'])->name('my_request_inbox');
+    //Route::get('/authorize_inbox', [RequestFormController::class, 'authorizeInbox'])->name('authorize_inbox');
+
+    Route::get('/event_show_file/{eventRequestFormFile}', [EventRequestFormFileController::class, 'showFile'])->name('event.show_file');
+});
+
+/** Fin rutas Orders Form */
 
 Route::prefix('allowances')->as('allowances.')->middleware(['auth', 'must.change.password'])->group(function () {
     Route::get('/', [AllowanceController::class, 'index'])->name('index');

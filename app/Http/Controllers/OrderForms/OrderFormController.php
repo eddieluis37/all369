@@ -64,7 +64,7 @@ class OrderFormController extends Controller {
             ->latest('id')
             ->paginate(30, ['*'], 'p2');
 
-        return view('order_form.my_forms', compact('my_requests', 'my_pending_requests','my_ou'));
+        return view('orders_form.my_forms', compact('my_requests', 'my_pending_requests','my_ou'));
     }
 
     public function own_index()

@@ -169,7 +169,7 @@
 
                             @php($ouSearch = App\Models\Parameters\Parameter::get('nav', 'accessRF'))
                             @if(auth()->user()->organizationalUnit && in_array(auth()->user()->organizationalUnit->establishment_id, explode(',', $ouSearch)))
-                                <a class="dropdown-item {{ active('request_forms.my_forms') }}" href="{{ route('request_forms.my_forms') }}">
+                                <a class="dropdown-item {{ active('orders_forms.my_forms') }}" href="{{ route('orders_forms.my_forms') }}">
                                     <i class="fas fa-fw fa-shopping-cart"></i> Ordenes de compra
                                 </a>
                             @endif
