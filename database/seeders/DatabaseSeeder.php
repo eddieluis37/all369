@@ -64,5 +64,9 @@ class DatabaseSeeder extends Seeder
         $this->call(EstablishmentSeeder::class);
         $this->call(ReceptionTypeSeeder::class);
 
+        /* SEED PARA PROBAR MODULO DE ORDENES */
+        $this->call(CategorySeeder::class);
+        $this->call(CentrocostoSeeder::class);
+
     }
 }
