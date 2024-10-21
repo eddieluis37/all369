@@ -19,7 +19,9 @@
 						<label for="" class="form-label">Centro de costo</label>
 						<select class="form-control form-control-sm input" name="centrocosto" id="centrocosto" required>
 							<option value="">Seleccione el centro de costo</option>
-							
+							@foreach($centros as $cencosto)
+							<option value="{{$cencosto->id}}" {{ $cencosto->id == 1 ? 'selected' : '' }}>{{$cencosto->name}}</option>
+							@endforeach
 						</select>
 						<span class="text-danger error-message"></span>
 					</div>
@@ -32,7 +34,7 @@
 						<label for="" class="form-label">Cliente</label>
 						<select class="form-control form-control-sm select2Cliente " name="cliente" id="cliente" required>
 							<option value="">Seleccione el cliente</option>
-							
+
 						</select>
 						<span class="text-danger error-message"></span>
 					</div>
@@ -45,7 +47,7 @@
 						<label for="dir" class="form-label">Dirección de entrega</label>
 						<select class="form-control form-control-sm input" name="direccion_envio" id="direccion_envio" required>
 							<option value="">Seleccione dir de entrega</option>
-							
+
 						</select>
 						<span class="text-danger error-message"></span>
 					</div>
@@ -58,7 +60,7 @@
 						<label for="" class="form-label">Vendedor</label>
 						<select class="form-control form-control-sm input" name="vendedor" id="vendedor" required>
 							<option value="">Seleccione el vendedor</option>
-							
+
 						</select>
 						<span class="text-danger error-message"></span>
 					</div>
@@ -71,7 +73,7 @@
 						<label for="" class="form-label">Sub centro de costo</label>
 						<select class="form-control form-control-sm input" name="subcentrodecosto" id="subcentrodecosto" required>
 							<option value="">Seleccione subCentroDeCosto</option>
-							
+
 						</select>
 						<span class="text-danger error-message"></span>
 					</div>
@@ -84,7 +86,7 @@
 						<label for="" class="form-label">Alistador</label>
 						<select class="form-control form-control-sm input" name="alistador" id="alistador" required>
 							<option value="">Seleccione el alistador</option>
-							
+
 						</select>
 						<span class="text-danger error-message"></span>
 					</div>
@@ -139,7 +141,7 @@
 						<label for="dir" class="form-label">Forma de pago</label>
 						<select class="form-control form-control-sm input" name="forma_de_pago" id="forma_de_pago" required>
 							<option value="">Seleccione forma de pago</option>
-							
+
 						</select>
 						<span class="text-danger error-message"></span>
 					</div>
