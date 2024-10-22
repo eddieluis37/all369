@@ -67,6 +67,13 @@ class DatabaseSeeder extends Seeder
         /* SEED PARA PROBAR MODULO DE ORDENES */
         $this->call(CategorySeeder::class);
         $this->call(CentrocostoSeeder::class);
+       
+       
+        $this->call(Type_identificationSeeder::class);
+        $this->call(Type_regimen_ivaSeeder::class);
+        $this->call(OfficeSeeder::class);
+        $this->call(ProvinceSeeder::class);
+        $this->call(ThirdSeeder::class);
 
     }
 }

@@ -87,6 +87,10 @@
 		$('.debug-url').html('<strong>Eliminar Formulario de Requerimiento ID ' + $(e.relatedTarget).data('id') + '</strong>');
 	});
 </script>
+
+<script src="{{asset('rogercode/js/order/rogercode-order-index.js')}}"></script>
+<script src="{{asset('rogercode/js/order/rogercode-create-update.js')}}" type="module"></script>
+
 @endsection
 @section('custom_js_head')
 <style>

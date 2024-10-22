@@ -34,7 +34,9 @@
 						<label for="" class="form-label">Cliente</label>
 						<select class="form-control form-control-sm select2Cliente " name="cliente" id="cliente" required>
 							<option value="">Seleccione el cliente</option>
-
+							@foreach($clientes as $option)
+							<option value="{{ $option['id'] }}" data="{{$option}}">{{ $option['name'] }}</option>
+							@endforeach
 						</select>
 						<span class="text-danger error-message"></span>
 					</div>
@@ -47,7 +49,13 @@
 						<label for="dir" class="form-label">Dirección de entrega</label>
 						<select class="form-control form-control-sm input" name="direccion_envio" id="direccion_envio" required>
 							<option value="">Seleccione dir de entrega</option>
-
+							@foreach($direccion as $dir)
+							<option value="{{ $dir->direccion }}">{{ $dir->direccion }}</option>
+							<option value="{{ $dir->direccion1 }}">{{ $dir->direccion1 }}</option>
+							<option value="{{ $dir->direccion2 }}">{{ $dir->direccion2 }}</option>
+							<option value="{{ $dir->direccion3 }}">{{ $dir->direccion3 }}</option>
+							<option value="{{ $dir->direccion4 }}">{{ $dir->direccion4 }}</option>
+							@endforeach	
 						</select>
 						<span class="text-danger error-message"></span>
 					</div>

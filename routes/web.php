@@ -2481,6 +2481,7 @@ Route::prefix('orders_forms')->as('orders_forms.')->middleware(['auth', 'must.ch
     })->name('circular_3650_2024');
 
     Route::get('/my_forms', [OrderFormController::class, 'my_forms'])->name('my_forms');
+  //  Route::get('/getDireccionesByCliente/{cliente_id}', [OrderFormController::class, 'getDireccionesByCliente'])->name('getDireccionesByCliente');
 
     
     Route::get('/own_index', [RequestFormController::class, 'own_index'])->name('own_index');
@@ -2499,6 +2500,8 @@ Route::prefix('orders_forms')->as('orders_forms.')->middleware(['auth', 'must.ch
     Route::get('/export', [RequestFormController::class, 'export'])->name('export');
     Route::get('/{requestForm}/copy', [RequestFormController::class, 'copy'])->name('copy');
     Route::get('/{requestForm}/rollback', [RequestFormController::class, 'rollback'])->name('rollback');
+
+   
 
     Route::prefix('message')->as('message.')->middleware('auth')->group(function () {
         Route::post('/{requestForm}/store/{eventType}/{from}', [RequestFormMessageController::class, 'store'])->name('store');
